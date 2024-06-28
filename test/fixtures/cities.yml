@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+boston:
+  name: Boston
+  state: Massachusetts
+  country: USA
+
+new_york_city:
+  name: New York City
+  state: New York
+  country: USA

@@ -1,0 +1,11 @@
+<div class="w-full">
+
+  <div class="flex justify-between items-center">
+    <h1>Apartments</h1>
+    <%= link_to "New apartment", new_apartment_path, class: "button-large" %>
+  </div>
+
+  <div id="apartments" class="min-w-full">
+    <%= render @apartments %>
+  </div>
+</div>

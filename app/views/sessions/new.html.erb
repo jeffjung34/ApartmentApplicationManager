@@ -1,0 +1,21 @@
+<div class="mx-auto w-full">
+  <%= form_tag do %>
+    <h1>Please Log In</h1>
+
+    <div class="my-5">
+      <%= label_tag :email, 'Email:' %>
+      <%= text_field_tag :email, params[:email] %>
+    </div>
+
+    <div class="my-5">
+      <%= label_tag :password, 'Password:' %>
+      <%= password_field_tag :password, params[:password] %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Login",  class: "button-large" %>
+    </div>
+
+    <%= link_to 'No account? Sign up!', register_path %>
+  <% end %>
+</div>

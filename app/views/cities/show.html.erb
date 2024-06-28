@@ -1,0 +1,43 @@
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <%= render @city %>
+    <hr>
+    <div class="my-5">
+      <%= link_to("Add a Neighborhood", new_city_neighborhood_path(@city), class: "button-small float-right") %>
+      <h3>Neighborhoods</h3>
+      <ul>
+        <% @city.neighborhoods.each do |neighborhood| %>
+          <li><%= link_to(neighborhood.name, city_neighborhood_path(@city, neighborhood)) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Neighborhood</th>
+          <th>Address</th>
+          <th>Bedrooms</th>
+          <th>Rent</th>
+          <th>Remaining Bedrooms</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @city.apartments.each do |apartment| %>
+          <tr>
+            <td><%= apartment.neighborhood.name %></td>
+            <td><%= link_to(apartment.street_address, apartment_path(apartment)) %></td>
+            <td><%= apartment.bedrooms %></td>
+            <td><%= number_to_currency(apartment.rent, precision: 0) %></td>
+            <td><%= apartment.remaining_bedrooms %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to "Edit this city", edit_city_path(@city), class: "button-edit" %>
+    <div class="inline-block ml-2">
+      <%= button_to "Destroy this city", city_path(@city), method: :delete, class: "button-delete" %>
+    </div>
+    <%= link_to "Back to cities", cities_path, class: "button-back" %>
+  </div>
+</div>

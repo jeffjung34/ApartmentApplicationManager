@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+marlborough_apt:
+  street_address: 372 Marlborough
+  bedrooms: 1
+  rent: 825.00
+  notes: Well, that was the rent back in 1990
+  neighborhood: back_bay
+  city: boston
+
+soho_apt:
+  street_address: MyString
+  bedrooms: 2
+  rent: 3000
+  notes: Near Death & Co.!
+  neighborhood: lower_east_side
+  city: new_york_city

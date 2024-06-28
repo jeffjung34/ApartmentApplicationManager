@@ -1,0 +1,15 @@
+<div id="<%= dom_id neighborhood %>">
+  <h1>
+    <%= neighborhood.name %>
+  </h1>
+  <h2>
+  <%= link_to(neighborhood.city.name, city_path(@city)) %>
+  </h2>
+
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this neighborhood", city_neighborhood_path(@city, neighborhood), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this neighborhood", edit_neighborhood_path(@city, neighborhood), class: "button-edit" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

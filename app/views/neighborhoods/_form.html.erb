@@ -1,0 +1,33 @@
+<%= form_with(model: [city,  neighborhood], class: "contents") do |form| %>
+  <% if neighborhood.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(neighborhood.errors.count, "error") %> prohibited this neighborhood from being saved:</h2>
+
+      <ul>
+        <% neighborhood.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @neighborhood.persisted? %>
+    <div class="my-5">
+      <%= form.label :city_id %>
+      <%= form.collection_select :city_id, @cities, :id, :name, prompt: true %>    
+    </div>
+  <% else %>
+    <h2>
+      <%= link_to(@neighborhood.city.name, city_path(@neighborhood.city)) %>
+    </h2>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

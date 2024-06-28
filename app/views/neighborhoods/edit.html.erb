@@ -1,0 +1,7 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">Editing neighborhood</h1>
+
+  <%= render "form", city: @city, neighborhood: @neighborhood %>
+
+  <%= link_to "Show this neighborhood", city_neighborhood_path(@city, @neighborhood), class: "button-back" %>
+</div>

@@ -1,0 +1,15 @@
+<div id="<%= dom_id city %>">
+  <h1>
+    <%= city.name %>
+  </h1>
+
+  <h2>
+    <%= city.state %>, <%= city.country %>
+  </h2>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this city", city, class: "button-back" %>
+    <%= link_to "Edit this city", edit_city_path(city), class: "button-edit" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

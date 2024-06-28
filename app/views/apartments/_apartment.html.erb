@@ -1,0 +1,21 @@
+<div id="<%= dom_id apartment %>">
+  <p class="my-5">
+    <strong class="font-medium mb-1">Bedrooms:</strong>
+    <%= apartment.bedrooms %>
+  </p>
+
+  <p class="my-5">
+    <strong class="font-medium mb-1">Rent:</strong>
+    <%= number_to_currency(apartment.rent, precision: 0) %>
+  </p>
+
+  <p class="my-5">
+    <%= apartment.notes %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this apartment", apartment, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this apartment", edit_apartment_path(apartment), class: "button-edit" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

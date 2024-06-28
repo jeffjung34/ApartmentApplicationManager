@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  h1 {
+    @apply text-4xl font-bold
+  }
+
+  h2 {
+    @apply text-2xl font-bold
+  }
+
+  h3 {
+    @apply text-xl font-bold
+  }
+
+  a {
+    @apply text-blue-600 hover:text-blue-800
+  }
+
+  ul {
+    @apply list-disc
+  }
+
+  hr {
+    @apply h-px my-4 bg-gray-200 border-0 dark:bg-gray-700
+  }
+
+  table {
+    @apply min-w-full bg-white border border-gray-300 mt-10
+  }
+
+  th {
+    @apply py-2 px-4 border-b
+  }
+
+  td {
+    @apply py-2 px-4 border-b
+  }
+ 
+}
+
+@layer components {
+  .button-large {
+    @apply rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium
+  }
+
+  .button-small {
+    @apply rounded-lg px-2  bg-blue-600 text-white block font-medium
+  }
+
+  .button-edit {
+    @apply mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium
+  }
+
+  .button-delete {
+    @apply mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium
+  }
+
+  .button-back {
+    @apply ml-2 mt-1 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium
+  }
+
+  .form-label {
+    @apply block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2
+  }
+
+  .text-field {
+    @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full
+  }
+}

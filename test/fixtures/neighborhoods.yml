@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+back_bay:
+  name: Back Bay
+  city: boston
+
+lower_east_side:
+  name: Lower East Side
+  city: new_york_city

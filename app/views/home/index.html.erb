@@ -1,0 +1,36 @@
+<div>
+  <% if @my_apartment %>
+    <h2>Current Residence</h2>
+    <p><%= @my_apartment.street_address %>, <%= @my_apartment.city.name %></p>
+    <p>Rent: $<%= @my_apartment.rent %></p>
+    <p>Bedrooms: <%= @my_apartment.bedrooms %></p>
+  <% else %>
+    <p>You are not currently residing in any apartment.</p>
+  <% end %>
+
+  <h2>My Applications</h2>
+  <% @my_requests.each do |request| %>
+    <div>
+      <%= request.apartment.street_address %> - Status: <%= request.status %>
+    </div>
+  <% end %>
+
+  <% if @my_apartment && @reviewable_requests.any? %>
+    <h2>Applications to Review for My Apartment</h2>
+    <ul>
+      <% @reviewable_requests.each do |request| %>
+        <li>
+          <%= request.applicant.email %> 
+          <!-- Approve button -->
+          <%= button_to 'Approve', apartment_apartment_request_path(@my_apartment, request), 
+              method: :patch, params: { status: 'approved' }, 
+              class: "button-small bg-green-600" %>
+          <!-- Deny button -->
+          <%= button_to 'Deny', apartment_apartment_request_path(@my_apartment, request), 
+              method: :patch, params: { status: 'denied' }, 
+              class: "button-small bg-red-600" %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
